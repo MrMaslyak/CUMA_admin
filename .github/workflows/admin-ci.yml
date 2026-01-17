@@ -1,0 +1,36 @@
+name: Admin CI
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: mvn -B clean package -DskipTests
+      - name: Build Docker image
+        run: docker build -t admin-service .
+
+  test:
+    runs-on: self-hosted
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: mvn -B test
+
+  deploy:
+    runs-on: self-hosted
+    needs: test
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        run: docker compose -f compose-admin.yaml up -d
+        env:
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          DB_NAME: ${{ secrets.DB_NAME }}
