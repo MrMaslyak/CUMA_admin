@@ -34,6 +34,21 @@ services:
     networks:
       - CUMA-admin
 
+  liquibase-cli:
+    build:
+      context: .
+      dockerfile: liquibase-docker/Dockerfile
+    container_name: cuma-admin-liquibase
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - CUMA-admin
+    volumes:
+      - ./liquibase-docker:/liquibase-docker
+    stdin_open: true
+    tty: true
+
 networks:
   CUMA-admin:
     external: true

@@ -1,0 +1,196 @@
+databaseChangeLog:
+- changeSet:
+    id: 1769973892843-1
+    author: root (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: platform_users_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: login
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: password
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: system_role
+            type: VARCHAR(255)
+        tableName: platform_users
+- changeSet:
+    id: 1769973892843-2
+    author: root (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: expired_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: subscriptions_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: tenant_id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: plan
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        tableName: subscriptions
+- changeSet:
+    id: 1769973892843-3
+    author: root (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: created_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: timezone
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+            name: updated_at
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tenants_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: domain
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: status
+            type: VARCHAR(255)
+        tableName: tenants
+- changeSet:
+    id: 1769973892843-4
+    author: root (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: tenant_id
+        constraintName: subscriptions_tenant_id_key
+        tableName: subscriptions
+- changeSet:
+    id: 1769973892843-5
+    author: root (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: tenant_owners_pkey
+            name: id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: tenant_id
+            type: UUID
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: login
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: password
+            type: VARCHAR(255)
+        tableName: tenant_owners
+- changeSet:
+    id: 1769973892843-6
+    author: root (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: tenant_id
+        baseTableName: subscriptions
+        constraintName: fk6cld8vfsju3r2hur8pytoanbj
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: tenants
+        validate: true
+- changeSet:
+    id: 1769973892843-7
+    author: root (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: tenant_id
+        baseTableName: tenant_owners
+        constraintName: fkdqwc0j0m67xpco2k6hd8ppgpi
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: NO ACTION
+        onUpdate: NO ACTION
+        referencedColumnNames: id
+        referencedTableName: tenants
+        validate: true
+
