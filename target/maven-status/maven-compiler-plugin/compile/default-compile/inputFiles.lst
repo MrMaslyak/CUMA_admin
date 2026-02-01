@@ -1,9 +1,12 @@
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/CumaAdminApplication.java
-/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/PlatformUsers.java
-/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/Subscriptions.java
-/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/TenantOwners.java
-/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/Tenants.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/config/HibernateConfig.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/dao/PlatformDAO.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/PlatformUsersTable.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/SubscriptionsTable.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/TenantOwnersTable.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/TenantsTable.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SubPlan.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SubStatus.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SystemRole.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/TenantsStatus.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/system/OwnerInitializer.java

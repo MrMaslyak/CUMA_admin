@@ -11,6 +11,7 @@ import org.springframework.context.annotation.PropertySource;
         "service",
         "system",
         "dao",
+        "config",
 })
 @PropertySource("classpath:/application.properties")
 @EntityScan({"entity", "entity"})
