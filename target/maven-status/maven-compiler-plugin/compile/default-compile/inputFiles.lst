@@ -1,1 +1,9 @@
-/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/com/example/cuma_admin/CumaAdminApplication.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/CumaAdminApplication.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/PlatformUsers.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/Subscriptions.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/TenantOwners.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/Tenants.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SubPlan.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SubStatus.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/SystemRole.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/enums/TenantsStatus.java

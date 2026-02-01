@@ -1,1 +1,9 @@
-com/example/cuma_admin/CumaAdminApplication.class
+enums/TenantsStatus.class
+entity/Subscriptions.class
+enums/SystemRole.class
+entity/TenantOwners.class
+enums/SubStatus.class
+enums/SubPlan.class
+entity/Tenants.class
+entity/PlatformUsers.class
+CumaAdminApplication.class
