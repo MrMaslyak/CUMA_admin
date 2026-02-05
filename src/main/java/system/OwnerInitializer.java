@@ -7,6 +7,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -14,10 +15,11 @@ import java.util.Date;
 @Component
 public class OwnerInitializer {
 
-//  private final PasswordEncoder passwordEncoder;
+  private final PasswordEncoder passwordEncoder;
     private final PlatformDAO platformDAO;
 
-    public OwnerInitializer(PlatformDAO platformDAO) {
+    public OwnerInitializer(PasswordEncoder passwordEncoder, PlatformDAO platformDAO) {
+        this.passwordEncoder = passwordEncoder;
         this.platformDAO = platformDAO;
     }
 
@@ -37,10 +39,10 @@ public class OwnerInitializer {
         }else {
             boolean needsUpdate = false;
 
-//            if (!password.matches(existingUser.getPassword())) {
-//                existingUser.setPassword(password.encode(password));
-//                needsUpdate = true;
-//            }
+            if (!passwordEncoder.matches(password, existingUser.getPassword())) {
+                existingUser.setPassword(passwordEncoder.encode(password));
+                needsUpdate = true;
+            }
             if (!password.equals(existingUser.getPassword())){
                 existingUser.setPassword(password);
                 needsUpdate = true;
@@ -63,7 +65,7 @@ public class OwnerInitializer {
         Date now = new Date();
         PlatformUsersTable user = new PlatformUsersTable();
         user.setLogin(login);
-        user.setPassword(password);
+        user.setPassword(passwordEncoder.encode(password));
         user.setEmail("ogorodov@gmail.com");
         user.setSystem_role(SystemRole.OWNER);
         user.setCreated_at(now);

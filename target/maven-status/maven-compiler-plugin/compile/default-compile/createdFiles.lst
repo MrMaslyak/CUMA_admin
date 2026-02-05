@@ -1,10 +1,13 @@
 enums/TenantsStatus.class
 config/HibernateConfig.class
 entity/TenantsTable.class
+details/CustomPlatformDetails.class
 enums/SubPlan.class
 entity/PlatformUsersTable.class
+details/CustomPlatformDetailsService.class
 entity/SubscriptionsTable.class
 CumaAdminApplication.class
+config/SecurityConfig.class
 dao/PlatformDAO.class
 enums/SystemRole.class
 enums/SubStatus.class

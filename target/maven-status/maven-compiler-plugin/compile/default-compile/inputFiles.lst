@@ -1,6 +1,9 @@
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/CumaAdminApplication.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/config/HibernateConfig.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/config/SecurityConfig.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/dao/PlatformDAO.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/details/CustomPlatformDetails.java
+/Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/details/CustomPlatformDetailsService.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/PlatformUsersTable.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/SubscriptionsTable.java
 /Users/maslyak/IdeaProjects/CUMA_admin/src/main/java/entity/TenantOwnersTable.java

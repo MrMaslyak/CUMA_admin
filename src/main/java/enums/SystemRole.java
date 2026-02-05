@@ -2,5 +2,6 @@ package enums;
 
 public enum SystemRole {
     OWNER,
-    PLATFORM
+    PLATFORM,
+    SUPPORT
 }
